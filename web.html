@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BengalWeft - Weaving Quality, Delivering Trust</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --navy: #1a237e;
+            --navy-light: #283593;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--navy-light);
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--dark-gray);
+        }
+        
+        .btn-gold:hover {
+            background-color: #e6c158;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            margin-bottom: 0;
+            color: var(--navy);
+        }
+        
+        .logo span {
+            color: var(--gold);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--navy);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(26, 35, 126, 0.8)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-gray);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member-img {
+            height: 250px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 60px;
+        }
+        
+        .team-member-info {
+            padding: 20px;
+        }
+        
+        .team-member-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .team-member-info p.role {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+        
+        /* Products Section */
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--navy);
+        }
+        
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 250px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 60px;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h4 {
+            margin-bottom: 10px;
+        }
+        
+        .product-info p.material {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-gray);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background-color: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 40px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--navy-light);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Bengal<span>Weft</span></h1>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Weaving Quality, Delivering Trust</h2>
+            <p>Connecting global buyers with trusted Bangladeshi manufacturers while creating our own quality fashion products.</p>
+            <a href="#contact" class="btn btn-gold">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>BengalWeft is a trusted apparel buying house based in Bangladesh, specializing in men's wear, innerwear, and loungewear. We manage the full production process — from sourcing fabrics and developing samples to ensuring top-quality final products.</p>
+                    <p>Our experienced team collaborates closely with manufacturers and international buyers, maintaining transparency and quality in every stitch.</p>
+                    <a href="#contact" class="btn">Contact Us</a>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for company image -->
+                    <div style="height: 400px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: var(--navy); font-size: 60px;">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Rashedul Hoque</h4>
+                        <p class="role">Managing Director & Senior Merchandiser</p>
+                        <p>With over 15 years in the apparel industry, Rashed ensures our operations run smoothly and exceed client expectations.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Israk Jahan Samir</h4>
+                        <p class="role">Director</p>
+                        <p>Samir manages client relationships and oversees production timelines to ensure timely delivery of all orders.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Mohammad Khaled</h4>
+                        <p class="role">Quality Controller</p>
+                        <p>Khaled meticulous attention to detail ensures every product meets our stringent quality standards before shipment.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Maimunul Karim Jisan</h4>
+                        <p class="role">Product Designer</p>
+                        <p>Jisan combines fashion trends with practical design to create appealing and functional clothing lines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Product Sourcing & Development</h3>
+                    <p>We identify and partner with the best manufacturers in Bangladesh to source quality materials and develop products that meet your specifications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Sampling & Quality Control</h3>
+                    <p>Our team ensures samples meet your requirements and implements rigorous quality control throughout the production process.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Vendor Management</h3>
+                    <p>We manage relationships with manufacturers, ensuring clear communication and adherence to timelines and quality standards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Shipment Follow-up</h3>
+                    <p>We coordinate logistics and track shipments to ensure your products reach you on time and in perfect condition.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Product Design Consultation</h3>
+                    <p>Our design team provides expert advice on trends, fabrics, and styles to help you create successful product lines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="product-tabs">
+                <button class="tab-btn active" data-tab="mens">Men's Wear</button>
+                <button class="tab-btn" data-tab="innerwear">Innerwear</button>
+                <button class="tab-btn" data-tab="pajamas">Pajamas</button>
+            </div>
+            <div class="products-grid">
+                <!-- Men's Wear Products -->
+                <div class="product-card" data-category="mens">
+                    <div class="product-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Classic Cotton Shirt</h4>
+                        <p class="material">100% Premium Cotton</p>
+                        <p>A versatile shirt perfect for both casual and formal occasions. Features a comfortable fit and durable construction.</p>
+                        <div class="product-actions">
+                            <button class="btn">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="mens">
+                    <div class="product-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Slim Fit Chinos</h4>
+                        <p class="material">Cotton-Twill Blend</p>
+                        <p>Modern slim-fit chinos that offer both style and comfort. Ideal for everyday wear with a polished look.</p>
+                        <div class="product-actions">
+                            <button class="btn">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Innerwear Products -->
+                <div class="product-card" data-category="innerwear">
+                    <div class="product-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Comfort Fit Briefs</h4>
+                        <p class="material">Soft Cotton Blend</p>
+                        <p>Everyday comfort with breathable fabric and perfect fit. Designed for all-day wear without irritation.</p>
+                        <div class="product-actions">
+                            <button class="btn">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="innerwear">
+                    <div class="product-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Premium Boxers</h4>
+                        <p class="material">Microfiber Blend</p>
+                        <p>Lightweight and moisture-wicking boxers that provide superior comfort and support throughout the day.</p>
+                        <div class="product-actions">
+                            <button class="btn">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pajamas Products -->
+                <div class="product-card" data-category="pajamas">
+                    <div class="product-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Classic Cotton Pajamas</h4>
+                        <p class="material">100% Breathable Cotton</p>
+                        <p>Soft, comfortable pajamas perfect for a restful night's sleep. Features a relaxed fit and durable construction.</p>
+                        <div class="product-actions">
+                            <button class="btn">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="pajamas">
+                    <div class="product-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Lounge Set</h4>
+                        <p class="material">Brushed Cotton Blend</p>
+                        <p>Perfect for relaxing at home, this lounge set offers ultimate comfort with its soft fabric and relaxed fit.</p>
+                        <div class="product-actions">
+                            <button class="btn">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-threads"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-box-open"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <h3>Get In Touch</h3>
+                        <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p>Chittagong, Bangladesh</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p>info@bengalweft.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="https://wa.me/880XXXXXXXXXX" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>BengalWeft</h3>
+                    <p>Weaving Quality, Delivering Trust. Connecting global buyers with trusted Bangladeshi manufacturers while creating our own quality fashion products.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Product Sourcing</a></li>
+                        <li><a href="#">Quality Control</a></li>
+                        <li><a href="#">Vendor Management</a></li>
+                        <li><a href="#">Shipment Follow-up</a></li>
+                        <li><a href="#">Design Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Chittagong, Bangladesh</li>
+                        <li><i class="fas fa-envelope"></i> info@bengalweft.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BengalWeft. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Product Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-tab');
+                
+                // Show/hide products based on category
+                productCards.forEach(card => {
+                    if (category === 'mens' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
